@@ -11,6 +11,24 @@
   "bugs": {
     "url": "https://github.com/micrajs/community/issues?q=is:issue+is:open+label:%22Project:+react-dom-ui-engine%22+label:%22Type:+fix%22"
   },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./*": "./*",
+    "./ServiceProvider.server": {
+      "import": "./ServiceProvider.server.mjs",
+      "require": "./ServiceProvider.server.js",
+      "types": "./ServiceProvider.server.d.ts"
+    },
+    "./ServiceProvider.web": {
+      "import": "./ServiceProvider.web.mjs",
+      "require": "./ServiceProvider.web.js",
+      "types": "./ServiceProvider.web.d.ts"
+    }
+  },
   "scripts": {
     "build:code": "vite build --config .viterc.ts",
     "build:types": "tsc -p tsconfig.json && tsc-alias --silent -p tsconfig.json --dir .",
@@ -32,6 +50,8 @@
     "@micra/typescript-config": "^0.1.0-next.1",
     "@micra/vite-config": "^0.1.0-next.2",
     "@types/node": "^17.0.21",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "c8": "^7.11.0",
     "concurrently": "^7.0.0",
     "eslint": "^8.11.0",
@@ -44,5 +64,11 @@
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "vitest": "^0.6.1"
+  },
+  "dependencies": {
+    "@micra/core": "0.1.0-next.19",
+    "@micra/error": "0.1.0-next.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
